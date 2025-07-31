@@ -1,0 +1,269 @@
+.about-us-container {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  padding: 15px;
+  
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  height: 450px;
+}
+
+.about-content {
+  flex: 1;
+  min-width: 300px;
+  padding: 15px;
+}
+
+.about-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #c1272d;
+}
+
+.divider {
+  margin: 20px 0;
+}
+
+.divider img {
+  height: 30px;
+}
+
+.description p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Vision & Mission Section */
+.vision-mission-section {
+  background-color: #f9f9f9;
+  padding: 40px 0;
+  margin: 40px 0;
+}
+
+.vision-mission-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.vision-box, .mission-box {
+  flex: 1;
+  min-width: 300px;
+  padding: 30px;
+  margin: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.vision-box h2, .mission-box h2 {
+  font-size: 28px;
+  color: #c1272d;
+  margin-bottom: 15px;
+}
+
+.divider-small {
+  margin: 15px 0;
+}
+
+.divider-small img {
+  height: 20px;
+}
+
+.vision-box p, .mission-box p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Name Meaning Section */
+.name-meaning-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 60px 0;
+}
+
+.name-content {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.name-content h2 {
+  font-size: 36px;
+  color: #c1272d;
+  margin-bottom: 10px;
+}
+
+.name-content h4 {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.name-content p {
+  line-height: 1.6;
+  font-size: 16px;
+  max-width: 500px;
+}
+
+.vertical-divider {
+  padding: 0 20px;
+}
+
+.vertical-divider img {
+  height: 200px;
+}
+
+.logo-image {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* History Section */
+.history-section {
+  margin: 60px 0;
+}
+
+.history-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.history-header h2 {
+  font-size: 36px;
+  color: #c1272d;
+}
+
+.timeline-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.timeline-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.timeline-content h3 {
+  font-size: 24px;
+  color: #c1272d;
+  margin-bottom: 15px;
+}
+
+.timeline-content p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.timeline-image {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.timeline-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Highway Restaurant Section */
+.highway-restaurant-section {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  margin: 60px 0;
+  text-align: center;
+}
+
+.highway-restaurant-section h1 {
+  font-size: 32px;
+  color: #c1272d;
+  margin-bottom: 20px;
+}
+
+.highway-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.image-carousel {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.image-carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.highway-description {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  text-align: left;
+}
+
+.highway-description p {
+  line-height: 1.6;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-section, .name-meaning-section, .timeline-item, .highway-content {
+    flex-direction: column;
+  }
+  
+  .vertical-divider {
+    display: none;
+  }
+  
+  .about-content h2, .history-header h2, .name-content h2 {
+    font-size: 28px;
+  }
+}

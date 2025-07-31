@@ -1,0 +1,54 @@
+.order-success-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .success-icon {
+    font-size: 4rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+  }
+  
+  .order-details {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    text-align: left;
+  }
+  
+  .order-details p {
+    margin: 0.5rem 0;
+  }
+  
+  .delivery-instruction {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #ddd;
+    font-style: italic;
+  }
+  
+  .confirmation-text {
+    margin: 1.5rem 0;
+    color: #555;
+  }
+  
+  .back-to-home {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff7e8b;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+  }
+  
+  .back-to-home:hover {
+    background-color: #ff6b7b;
+  }

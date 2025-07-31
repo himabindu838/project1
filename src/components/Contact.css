@@ -1,0 +1,199 @@
+/* Base Styles */
+.paakashala-contact {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* Header Section */
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-header h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #222;
+  font-weight: 600;
+}
+
+.header-divider img {
+  height: 30px;
+  margin: 0 auto;
+}
+
+/* Main Content Layout */
+.contact-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.contact-info-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Contact Info Boxes */
+.contact-info-box {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.contact-info-box:last-child {
+  border-bottom: none;
+}
+
+.contact-info-box h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #222;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.contact-info-box h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #d4a762;
+}
+
+.address-box h4 {
+  font-size: 18px;
+  margin: 15px 0 10px;
+  color: #444;
+  font-weight: 500;
+}
+
+.address {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.contact-methods {
+  margin-top: 15px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.contact-icon {
+  margin-right: 10px;
+  color: #d4a762;
+  font-size: 18px;
+}
+
+.contact-method a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-method a:hover {
+  color: #d4a762;
+}
+
+/* Contact Form */
+.form-header {
+  margin-bottom: 25px;
+}
+
+.form-header h3 {
+  font-size: 22px;
+  color: #222;
+  text-align: center;
+}
+
+.contact-form {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #d4a762;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: #d4a762;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: block;
+  width: 100%;
+  font-weight: 500;
+}
+
+.submit-btn:hover {
+  background: #c1914e;
+}
+
+/* Map Section */
+.map-section {
+  margin-top: 40px;
+}
+
+.map-container {
+  border-radius: 5px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-main {
+    flex-direction: column;
+  }
+  
+  .contact-header h1 {
+    font-size: 28px;
+  }
+  
+  .contact-form {
+    padding: 20px;
+  }
+}
