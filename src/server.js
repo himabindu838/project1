@@ -1,3 +1,4 @@
+// server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -9,7 +10,6 @@ const PORT = 5000;
 // MongoDB Atlas connection
 const MONGODB_URI = 'mongodb+srv://bindu9618:Hima%402003@cluster0.onyjrkd.mongodb.net/restaurant?retryWrites=true&w=majority';
 
-// Connect to MongoDB
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -24,15 +24,15 @@ mongoose.connect(MONGODB_URI, {
   process.exit(1);
 });
 
-// DB connection events
+// Log DB connection
 mongoose.connection.on('connected', () => {
-  console.log(`MongoDB connected: ${mongoose.connection.host}/${mongoose.connection.name}`);
+  console.log(`Mongoose connected to: ${mongoose.connection.db.databaseName}`);
 });
 mongoose.connection.on('error', (err) => {
   console.error('Mongoose connection error:', err);
 });
 
-// SCHEMAS
+// Order Schema
 const orderSchema = new mongoose.Schema({
   customerDetails: {
     name: { type: String, required: true },
@@ -56,6 +56,7 @@ const orderSchema = new mongoose.Schema({
   status: { type: String, default: 'pending' }
 }, { collection: 'orders' });
 
+// Booking Schema
 const bookingSchema = new mongoose.Schema({
   name: { type: String, required: true },
   phone: { type: String, required: true },
@@ -67,30 +68,24 @@ const bookingSchema = new mongoose.Schema({
   status: { type: String, default: 'confirmed' }
 }, { collection: 'bookings' });
 
-const Order = mongoose.model('Order', orderSchema);
 const Booking = mongoose.model('Booking', bookingSchema);
+const Order = mongoose.model('Order', orderSchema);
 
-// MIDDLEWARE
+// Middleware
 app.use(cors({
   origin: 'http://localhost:3000',
   methods: ['GET', 'POST']
 }));
 app.use(bodyParser.json());
 
-// BOOKING ENDPOINTS
 app.post('/api/bookings', async (req, res) => {
   try {
     console.log("Incoming booking data:", req.body);
 
-    // Ensure date is a proper Date object
     const bookingData = {
       ...req.body,
-      date: new Date(req.body.date + "T00:00:00Z"),
-      guests: Number(req.body.guests)
+      date: new Date(req.body.date + "T00:00:00Z")
     };
-
-    // Debug log each field
-    Object.entries(bookingData).forEach(([k, v]) => console.log(`${k}: ${v} (${typeof v})`));
 
     const booking = new Booking(bookingData);
     await booking.save();
@@ -103,14 +98,16 @@ app.post('/api/bookings', async (req, res) => {
       bookingId: booking._id
     });
   } catch (error) {
-    console.error('Booking save error:', error);
+    console.error('Booking save error:', error); // <-- Print full error
     res.status(500).json({
       success: false,
-      error: error.message
+      error: error.message,
+      stack: error.stack    // <-- Add stack trace for debugging
     });
   }
 });
 
+// GET: Fetch all bookings
 app.get('/api/bookings', async (req, res) => {
   try {
     const bookings = await Booking.find().sort({ date: 1 });
@@ -128,7 +125,7 @@ app.get('/api/bookings', async (req, res) => {
   }
 });
 
-// ORDER ENDPOINT
+// POST: Order endpoint
 app.post('/api/orders', async (req, res) => {
   try {
     const order = new Order(req.body);
@@ -149,7 +146,8 @@ app.post('/api/orders', async (req, res) => {
   }
 });
 
-// START SERVER
+// Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  console.log(`MongoDB: ${mongoose.connection.host}/${mongoose.connection.db.databaseName}`);
 });
